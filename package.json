@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "both": "concurrently '/frontend/npm run start' '/backend/node index.js'"
   },
   "repository": {
     "type": "git",

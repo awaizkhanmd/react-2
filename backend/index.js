@@ -11,7 +11,7 @@ mongoose.connect("mongodb+srv://bushra:euVDEv190AGHYJDI@cluster0.nwfddcm.mongodb
         console.log(err);
     });
 
-const port = 3000
+const port = 5000
 app.use("/", require("./routes/auth"))
 app.use('/', require('../backend/routes/notes'))
 //  app.use("/api/notes",require("./routes/notes"))

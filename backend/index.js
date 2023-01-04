@@ -1,7 +1,14 @@
 
 const mongoose = require("mongoose")
-const express = require('express')
+var express = require('express')
+
 const app = express()
+
+var cors = require('cors')
+
+
+app.use(cors())
+
 app.use(express.json());
 mongoose.connect("mongodb+srv://bushra:euVDEv190AGHYJDI@cluster0.nwfddcm.mongodb.net/AKM?retryWrites=true&",
     { useNewUrlParser: true, })

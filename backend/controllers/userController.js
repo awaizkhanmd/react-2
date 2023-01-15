@@ -20,6 +20,7 @@ const isValidPassword = (value) => {
 };
 const createuser = async function (req, res) {
     try {
+        let success = false;
         let data = req.body;
         const {
             name,
@@ -105,9 +106,11 @@ const createuser = async function (req, res) {
         };
 
         const jwtData = jwt.sign(Data, JWT_SIGN);
+        success = true;
         res.json({
-            jwtData,
-            savedData
+            sucess,
+            jwtData
+           
         });
 
 
@@ -171,7 +174,7 @@ const loginuser = async function (req, res) {
 
 const UserLoggedIn = async function (res, req) {
     try {
-    
+
         userId = req.user._id;
         const user = await UserModel.findOne({ _id: user }).select("-password")
         res.send(user)

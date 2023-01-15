@@ -44,14 +44,14 @@ const createuser = async function (req, res) {
                 });
         }
 
-        if (!/^[a-zA-Z ]{2,30}$/.test(data.name.trim())) {
-            return res
-                .status(400)
-                .send({
-                    status: false,
-                    message: "Enter a valid  name."
-                });
-        }
+        // if (!/^[a-zA-Z ]{2,30}$/.test(data.name.trim())) {
+        //     return res
+        //         .status(400)
+        //         .send({
+        //             status: false,
+        //             message: "Enter a valid  name."
+        //         });
+        // }
 
         if (!isValid(email)) {
             return res
@@ -78,7 +78,7 @@ const createuser = async function (req, res) {
         if (Email) {
             return res
                 .status(400)
-                .send({
+                .json({ 
                     status: false,
                     message: "email already registerd"
                 });
